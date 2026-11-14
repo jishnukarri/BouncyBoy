@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://nlgti82fttf1"]
+
+[ext_resource type="FontFile" uid="uid://bacf4fw7dwya1" path="res://assets/fonts/Nabla.ttf" id="1_8k8jw"]
+[ext_resource type="Texture2D" uid="uid://cuic8u6j0378o" path="res://assets/images/PLAY NOW.webp" id="2_1cctr"]
+[ext_resource type="Script" uid="uid://clayyrp4j45y4" path="res://scripts/start_button.cs" id="2_8k8jw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pyy8x"]
+font = ExtResource("1_8k8jw")
+font_size = 76
+shadow_size = 0
+
+[node name="Intro" type="Control" unique_id=1904211807]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=125698640]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 418.0
+offset_top = 198.0
+offset_right = -419.0
+offset_bottom = -344.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bonucible Boy"
+label_settings = SubResource("LabelSettings_pyy8x")
+
+[node name="PlayNow" type="Sprite2D" parent="." unique_id=526280126]
+position = Vector2(558, 402.0001)
+scale = Vector2(0.18055554, 0.18055555)
+texture = ExtResource("2_1cctr")
+script = ExtResource("2_8k8jw")
+
+[node name="TextureButton" type="TextureButton" parent="PlayNow" unique_id=2002631244]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -952.6154
+offset_top = -304.6159
+offset_right = -961.8464
+offset_bottom = -780.92377
