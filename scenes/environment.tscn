@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c1yhebpf5kfc3" path="res://scenes/moving_pad.tscn" id="1_bc5iu"]
 [ext_resource type="Texture2D" uid="uid://k5jfdax86djh" path="res://resources/textures/ProtoType Textures/styleGray.png" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://b0po5xenaxh88" path="res://scenes/time_pad.tscn" id="2_fm4en"]
+[ext_resource type="PackedScene" uid="uid://bqgdy5j6ea1ed" path="res://scenes/rotation_pad.tscn" id="4_0psjf"]
 [ext_resource type="PackedScene" uid="uid://cdrabyn3wl6rc" path="res://scenes/bounce_pad.tscn" id="4_hlc4h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y44tv"]
@@ -46,6 +47,12 @@ use_collision = true
 size = Vector3(3, 1, 1)
 destination = Vector3(0, 0, -5)
 
+[node name="moving_pad2" parent="platforms" unique_id=19212656 instance=ExtResource("1_bc5iu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.427517)
+use_collision = true
+size = Vector3(3, 1, 3)
+destination = Vector3(5, 0, -10)
+
 [node name="time_pad" parent="platforms" unique_id=1668053454 instance=ExtResource("2_fm4en")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 size = Vector3(3, 1, 1)
@@ -53,6 +60,11 @@ size = Vector3(3, 1, 1)
 [node name="time_pad2" parent="platforms" unique_id=756206565 instance=ExtResource("2_fm4en")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 size = Vector3(3, 1, 1)
+
+[node name="rotation_pad" parent="platforms" unique_id=763392133 instance=ExtResource("4_0psjf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.982071, 0, -14.574932)
+size = Vector3(10, 1, 1)
+strength = 4.0
 
 [node name="bounce_pad" parent="." unique_id=10856778 instance=ExtResource("4_hlc4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7186284, 0, -5.8975534)
