@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cdrabyn3wl6rc"]
+
+[ext_resource type="Script" uid="uid://cldfieawmvdav" path="res://scripts/bounce_pad.gd" id="1_fd0mo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2g5y"]
+
+[node name="bounce_pad" type="CSGBox3D" unique_id=944456760]
+script = ExtResource("1_fd0mo")
+
+[node name="area" type="Area3D" parent="." unique_id=1573149819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+
+[node name="collision" type="CollisionShape3D" parent="area" unique_id=188274543]
+shape = SubResource("BoxShape3D_e2g5y")
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
