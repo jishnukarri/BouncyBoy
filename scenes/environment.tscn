@@ -14,9 +14,11 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_y44tv")
 
 [sub_resource type="Environment" id="Environment_fm4en"]
-background_mode = 2
+background_energy_multiplier = 2.48
 sky = SubResource("Sky_bc5iu")
 glow_enabled = true
+volumetric_fog_density = 0.8471
+volumetric_fog_albedo = Color(0, 0, 0.34509805, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0psjf"]
 albedo_texture = ExtResource("1_d5dl1")
@@ -37,6 +39,29 @@ environment = SubResource("Environment_fm4en")
 [node name="platforms" type="Node3D" parent="." unique_id=1752801772]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="platforms" unique_id=1922446030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04182148, 0)
+use_collision = true
+size = Vector3(3, 1, 3)
+material = SubResource("StandardMaterial3D_0psjf")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="platforms/CSGBox3D" unique_id=1198633331]
+use_collision = true
+size = Vector3(3, 1, 3)
+material = SubResource("StandardMaterial3D_0psjf")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="platforms/CSGBox3D" unique_id=1614378254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.395288)
+use_collision = true
+size = Vector3(3, 1, 3)
+material = SubResource("StandardMaterial3D_0psjf")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="platforms" unique_id=510418411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.680775, 0, 0)
+use_collision = true
+size = Vector3(3, 1, 3)
+material = SubResource("StandardMaterial3D_0psjf")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="platforms/CSGBox3D2" unique_id=528724296]
 use_collision = true
 size = Vector3(3, 1, 3)
 material = SubResource("StandardMaterial3D_0psjf")
@@ -45,13 +70,19 @@ material = SubResource("StandardMaterial3D_0psjf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.013)
 use_collision = true
 size = Vector3(3, 1, 1)
-destination = Vector3(0, 0, -5)
+destination = Vector3(0, 0, -4)
 
 [node name="moving_pad2" parent="platforms" unique_id=19212656 instance=ExtResource("1_bc5iu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.427517)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051206112, 0, -14.427517)
 use_collision = true
 size = Vector3(3, 1, 3)
-destination = Vector3(2, 0, -10)
+destination = Vector3(1.5, 0, -12)
+
+[node name="moving_pad3" parent="platforms" unique_id=810715833 instance=ExtResource("1_bc5iu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.881712, 0, 4.5714645)
+use_collision = true
+size = Vector3(3, 1, 3)
+destination = Vector3(14, 0, 5)
 
 [node name="time_pad" parent="platforms" unique_id=1668053454 instance=ExtResource("2_fm4en")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
@@ -61,16 +92,33 @@ size = Vector3(3, 1, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 size = Vector3(3, 1, 1)
 
-[node name="rotation_pad" parent="platforms" unique_id=763392133 instance=ExtResource("4_0psjf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.982071, 0, -14.574932)
-size = Vector3(10, 1, 1)
-strength = 4.0
-
 [node name="bounce_pad" parent="." unique_id=10856778 instance=ExtResource("4_hlc4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7186284, 0, -5.8975534)
 
 [node name="bounce_pad2" parent="." unique_id=1932415760 instance=ExtResource("4_hlc4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5923605, 0, -7.750939)
 
+[node name="bounce_pad8" parent="." unique_id=1594918836 instance=ExtResource("4_hlc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.010624, 0, -16.605972)
+
+[node name="bounce_pad7" parent="." unique_id=1409427305 instance=ExtResource("4_hlc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.366024, 0, -15.248726)
+
+[node name="bounce_pad6" parent="." unique_id=730701037 instance=ExtResource("4_hlc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.70335, 0, -12.976902)
+
+[node name="bounce_pad5" parent="." unique_id=597754071 instance=ExtResource("4_hlc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.409689, 0, -14.123442)
+
 [node name="bounce_pad3" parent="." unique_id=1665604238 instance=ExtResource("4_hlc4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7213905, 0, -10.207281)
+
+[node name="rotation_pad" parent="." unique_id=784727689 instance=ExtResource("4_0psjf")]
+
+[node name="bounce_pad4" parent="." unique_id=946295711 instance=ExtResource("4_hlc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.808358, 0, -10.555275)
+size = Vector3(3, 1, 3)
+
+[node name="bounce_pad9" parent="." unique_id=912192429 instance=ExtResource("4_hlc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.237899, 0, 4.475939)
+size = Vector3(3, 1, 3)
