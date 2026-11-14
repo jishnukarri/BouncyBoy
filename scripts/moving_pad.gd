@@ -11,11 +11,11 @@ func _ready() -> void:
 	base_position = position
 
 func _process(delta: float) -> void:
-	if position == base_position:
-		target = 1
-	if position == destination:
-		target = -1
 	if target == 1:
-		position = lerp(position, destination, delta * move_speed)
+		position = position.move_toward(destination, move_speed * delta)
+		if position.distance_to(destination) < 0.01:
+			target = -1
 	elif target == -1:
-		position = lerp(position, base_position, delta * move_speed)
+		position = position.move_toward(destination, move_speed * delta)
+		if position.distance_to(base_position) < 0.01:
+			target = 1  

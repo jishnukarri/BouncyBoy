@@ -5,9 +5,9 @@ extends CSGBox3D
 @export var spin_speed := 1.0
 
 func _process(delta: float) -> void:
-	match axis:)
+	match axis:
 		"x":
-			rotation.x += spin_spee)d * delta)
+			rotation.x += spin_speed * delta
 		"y":
 			rotation.y += spin_speed * delta
 		"z":
