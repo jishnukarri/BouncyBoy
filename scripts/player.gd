@@ -15,11 +15,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		rotation.y -= event.relative.x * sensitivity
 		camera.rotation.x -= event.relative.y * sensitivity
 		pitch -= event.relative.y * sensitivity
+		camera.rotation.x = clampf(camera.rotation.x , pitch_min, pitch_max)
 		pitch = clampf(pitch, pitch_min, pitch_max)
 
 func _physics_process(delta: float) -> void:
 	if position.y < -5: 
 		position = Vector3(0, 1, 0)
+		global.timer = 0.0
+		global.started = 0
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -27,7 +30,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY * global.jump_multiplier
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -41,3 +44,10 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_area_body_entered(body: Node3D) -> void:
+	if body == self:
+		return
+	if body.is_in_group("bounce-pad"):
+		velocity = body.strength * Vector3.UP

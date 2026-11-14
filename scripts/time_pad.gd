@@ -8,6 +8,7 @@ var started = 0
 
 func on_off() -> void:
 	started = 1 - started
+	global.started = started
 
 func _on_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

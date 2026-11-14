@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://b0po5xenaxh88"]
 
 [ext_resource type="Script" uid="uid://kkpn0p82j6pf" path="res://scripts/time_pad.gd" id="1_6gvoh"]
+[ext_resource type="Texture2D" uid="uid://cyk1fo45dcs5q" path="res://resources/textures/ProtoType Textures/StyleBlue2.png" id="1_mefmp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mefmp"]
+albedo_texture = ExtResource("1_mefmp")
+uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2g5y"]
 
 [node name="time_pad" type="CSGBox3D" unique_id=944456760]
+use_collision = true
+material = SubResource("StandardMaterial3D_mefmp")
 script = ExtResource("1_6gvoh")
 
 [node name="area" type="Area3D" parent="." unique_id=1573149819]

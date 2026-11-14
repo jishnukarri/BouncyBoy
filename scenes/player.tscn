@@ -6,7 +6,10 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_e2g5y"]
 
-[node name="player" type="CharacterBody3D" unique_id=1747696815]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2g5y"]
+height = 2.1
+
+[node name="player" type="CharacterBody3D" unique_id=1747696815 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0260903, 0)
 script = ExtResource("1_3vyb7")
 
@@ -17,3 +20,10 @@ shape = SubResource("CapsuleShape3D_hqpwd")
 mesh = SubResource("CapsuleMesh_e2g5y")
 
 [node name="camera" type="Camera3D" parent="." unique_id=1374866331]
+
+[node name="area" type="Area3D" parent="." unique_id=496218611]
+
+[node name="area_collision" type="CollisionShape3D" parent="area" unique_id=755941337]
+shape = SubResource("CapsuleShape3D_e2g5y")
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

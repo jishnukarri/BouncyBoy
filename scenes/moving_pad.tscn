@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://c1yhebpf5kfc3"]
 
+[ext_resource type="Texture2D" uid="uid://djqa484pqs8yk" path="res://resources/textures/ProtoType Textures/StyleBrown.png" id="1_0nhwv"]
 [ext_resource type="Script" uid="uid://iaoesuhmagvq" path="res://scripts/moving_pad.gd" id="1_gi5vy"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpweo"]
+albedo_texture = ExtResource("1_0nhwv")
+uv1_triplanar = true
+
 [node name="moving_pad" type="CSGBox3D" unique_id=944456760]
+material = SubResource("StandardMaterial3D_mpweo")
 script = ExtResource("1_gi5vy")
