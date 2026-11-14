@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1yhebpf5kfc3"]
+
+[ext_resource type="Script" uid="uid://bbkuefrhji6b6" path="res://scripts/moving_pad.gd" id="1_gi5vy"]
+
+[node name="moving_pad" type="CSGBox3D" unique_id=944456760]
+script = ExtResource("1_gi5vy")

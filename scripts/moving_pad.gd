@@ -1,11 +1,16 @@
 extends CSGBox3D
 
+@onready var collision: CollisionShape3D = $area/collision
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var friction := INF
+@export var axis : Vector3 = Vector3.ZERO
+@export var spin_speed := 1.0
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	match axis:
+		"x":
+			rotation.x += spin_speed * delta
+		"y":
+			rotation.y += spin_speed * delta
+		"z":
+			rotation.z += spin_speed * delta
