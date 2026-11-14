@@ -8,5 +8,6 @@ albedo_texture = ExtResource("1_mq13g")
 uv1_triplanar = true
 
 [node name="rotation_pad" type="CSGBox3D" unique_id=944456760]
+use_collision = true
 material = SubResource("StandardMaterial3D_ri5wd")
 script = ExtResource("1_6e6cf")
